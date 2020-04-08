@@ -1,11 +1,12 @@
 import paho.mqtt.client as mqtt
 import ast
+from grove_rgb_lcd import *
 
 tempSlaap = 0
 tempBad = 0
 
 def printAll():
-    print("Slaapkamer:" + str(tempSlaap) + " Badkamer: " + str(tempBad))
+    setText_norefresh("Slaapkamer:" + str(tempSlaap) + " Badkamer: " + str(tempBad))
 
 # The callback for when the client receives a CONNACK response from the server.
 def on_connect(client, userdata, flags, rc):
